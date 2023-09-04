@@ -1,33 +1,22 @@
 # backpropagation-cellGPS
-improved speed of the cellGPS algorithm using backpropagation
+A backpropagation approach to improve the speed of the PEPT-SBSR(cellGPS) algorithm.
 
-# main/Backpropagation/Speed Test
-main code
-- Demo - Topas PET data backprop vs numerical grads.ipynb
-  - comparision between two algorithms for one simulated data
-- Demo - real PET data backprop vs numerical grads.ipynb
-  - comparision between two algorithms for one real data (from nature paper)
-- Topas PET data backprop vs numerical grads-hyperparameter tuning.ipynb
-  - comparision between two algorithms for about 140 simulated data with different hyperparameter settings
-- Topas PET data backprop vs numerical grads.ipynb
-  - comparision between two algorithms for about 140 simulated data with one hyperparameter settings
+---
+# Comparision_Helical
+Comparision of the previous and current algorithm of reconstruction speed and accuracy with the helical data.
 
+---
 # commons
-code for algorithms
-- loss.py
-  - code for the loss function J(a), for the previous cellGPS algorithm
-- lossWithGrad.py
-  - code for the backpropagation implementation of the loss function J(a)
-- optimizers.py
-  - code for the wrapper function, single_cellGPS() for easy use
-- utils.py
-  - utils
+## objFunc.py
+The objective function for the PEPT-SBSR algorithm. 
+  
+## backpropagation.py
+Implementing backpropagation to calculate the gradient of the objective function efficiently.
  
+## optimizer.py
+Wraper for the backpropagation approach of the PEPT-SBSR(cellGPS) algorithm.
+
+---
 # data
-data for the testing of the algorithms
-- Topas - single cell/raw
-  - GT: ground truth, LOR: PET list mode data files genereated with TOPAS
-- Comparisons.pkl
-  - python pickle file generated in 'Topas PET data backprop vs numerical grads.ipynb' for saving result
-- helical_real_PET_data.bin
-  - helical real data from the nature paper
+## Helical_100Bq300s.csv
+PET list mode data generated from a simulated Inveon microPET scanner. A single moving point source following a helical trajectory with a radioactivity of 100Bq was recorded for 5 minutes. The helical trajectory had a radius of 2 cm, and had an angular velocity of 6 deg/s.
